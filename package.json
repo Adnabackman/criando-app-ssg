@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:instagram-copy": "node dist/instagram-copy/server/server.mjs"
+    "serve:ssr:instagram-copy": "node dist/instagram-copy/server/server.mjs",
+    "build:ssr": "ng build && ng run instagram-copy:server",
+    "prerender": "ng run instagram-copy:prerender"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +21,7 @@
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/platform-server": "^19.2.0",
     "@angular/router": "^19.2.0",
-    "@angular/ssr": "^19.2.1",
+    "@angular/ssr": "^19.2.4",
     "@syncfusion/ej2-angular-lists": "^28.2.3",
     "@syncfusion/ej2-angular-navigations": "^28.2.11",
     "@syncfusion/ej2-icons": "^28.2.3",

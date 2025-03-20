@@ -42,8 +42,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "2mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -90,6 +90,24 @@
             ],
             "styles": ["src/styles.scss"],
             "scripts": []
+          }
+        },
+        "prerender": {
+          "builder": "@angular/ssr:prerender",
+          "options": {
+            "routes": ["/"],
+            "discoverRoutes": true,
+            "routesFile": "route.txt"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "instagram-copy:build:production",
+              "serverTarget": "instagram-copy:server:production"
+            },
+            "development": {
+              "browserTarget": "instagram-copy:build:development",
+              "serverTarget": "instagram-copy:server:development"
+            }
           }
         }
       }
