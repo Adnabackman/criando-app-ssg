@@ -95,18 +95,25 @@
         "prerender": {
           "builder": "@angular/ssr:prerender",
           "options": {
-            "routes": ["/"],
-            "discoverRoutes": true,
-            "routesFile": "route.txt"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "instagram-copy:build:production",
-              "serverTarget": "instagram-copy:server:production"
-            },
-            "development": {
-              "browserTarget": "instagram-copy:build:development",
-              "serverTarget": "instagram-copy:server:development"
+          "routes": [
+        { 
+          "route": "user/:userId",
+          "paramsFile": "src/app/app.config.server.ts",
+          "paramsFunctionName": "getPrerenderParams"
+        },
+      "/"
+    ],
+    "discoverRoutes": false,
+    "routesFile": "route.txt"
+  },
+  "configurations": {
+    "production": {
+      "browserTarget": "instagram-copy:build:production",
+      "serverTarget": "instagram-copy:server:production"
+    },
+    "development": {
+      "browserTarget": "instagram-copy:build:development",
+      "serverTarget": "instagram-copy:server:development"
             }
           }
         }
